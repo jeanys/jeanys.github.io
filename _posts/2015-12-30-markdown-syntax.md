@@ -12,8 +12,11 @@ categories: study
 ##### Header 5
 ######  Header 6
 
-[超链接](http://jeanys.github.io/ "link")
+普通段落
 
+Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前 github、Stackoverflow 等网站均支持这种格式。
+
+[超链接](http://jeanys.github.io/ "link")
 **强调加粗**
 *强调倾斜*
 `行内代码`
@@ -23,13 +26,13 @@ categories: study
 > 区块引用 Blockquotes
 > > 区块嵌套
 
-+ 无序列表 1 ul
-+ 无序列表 2 ul
-+ 无序列表 3 ul
++ 无序列表 ul
++ 无序列表 ul
++ 无序列表 ul
 
-1. 有序列表 1 ol
-2. 有序列表 2 ol
-3. 有序列表 3 ol
+1. 有序列表 ol
+2. 有序列表 ol
+3. 有序列表 ol
 
 ~~~javascript
 function markdown() {
