@@ -19,6 +19,7 @@ JavaScript 方向上，虽然日常工作还是写写小效果的节奏，但基
 > + `base64`
 > + `PostCSS`
 > + `Semantic`
+
 > ### Javascript:
 > + `RegExp`
 > + `Ajax`
@@ -26,28 +27,34 @@ JavaScript 方向上，虽然日常工作还是写写小效果的节奏，但基
 > + `jQuery`
 > + `underscore`
 > + `ES6`
+
 > ### API:
 > + `map SDK`
 > + `wechat JS-SDK`
 > + `editor`
 > + `form valid`
+
 > ### MVVM:
 > + `Angularjs`
 > + `Backbone`
 > + `Vue.js`
 > + `React`
 > + `Avalon`
+
 > ### AMD:
 > + `Requriejs`
 > + `Sea.js`
+
 > ### Build:
 > + `Gulp/Grunt`
 > + `webpack`
+
 > ### Lang:
 > + `PHP`
 > + `CoffeeScript`
 > + `Node.js`
 > + `Python`
+
 > ### Other:
 > + `Git`
 > + `Fiddler`
