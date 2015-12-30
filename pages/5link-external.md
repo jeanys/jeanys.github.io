@@ -5,6 +5,10 @@ permalink: /link/
 icon: octicon-link-external
 ---
 
-###[东方星痕](http://www.lxy520.net/)
+###[徐申申的小站](http://blog.xhsui.com/)
 
-###[Cass](http://cassite.net/)
+###[｛印象｝](http://blog.163.com/jean_ys/)
+
+###[｛须臾｝](http://jeanys.lofter.com/)
+
+###[喃喃语](http://time-whisper.lofter.com/)
