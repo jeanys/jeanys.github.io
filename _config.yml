@@ -28,7 +28,7 @@ baseurl: ""
 
 
 
-title: "Jean ys"
+title: "Jeanys"
 email: "jean_ys@163.com"
 description: "Feel more, think less."
 github_username:  "dubuyuye"
@@ -37,7 +37,7 @@ disqus_shortname: ""
 
 
 
-url: "http://jeanys.github.io/"
+url: "http://jeanys.github.io"
 imgrepo: "http://jeanys.github.io/static/img"
 #url: "http://127.0.0.1:4000"
 #imgrepo: "http://127.0.0.1:4000/static/img"

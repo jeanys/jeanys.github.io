@@ -59,11 +59,6 @@ layout: null
     line-height: 1.42857143;
 }
 
-.footnote-tiffany a,
-.footnote-tiffany span{
-    color:#fff;
-
-}
 .footnote .foot-item{
     display: inline-block;
     width: 28px;
@@ -78,6 +73,7 @@ layout: null
     -ms-transition: background .4s ease-in-out;
     -o-transition: background .4s ease-in-out;
     transition: background .4s ease-in-out;
+    color:#fff;
 }
 
 .footnote .foot-item:hover{
@@ -88,7 +84,10 @@ layout: null
     -o-transition: background .4s ease-in-out;
     transition: background .4s ease-in-out;
 }
-
+.footnote .foot-text{
+    font-size: 12px;
+    color: #676A6C;
+}
 /* footer */
 .footnote{
     min-height: 50px;
