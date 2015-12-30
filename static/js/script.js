@@ -6,11 +6,8 @@
  * 页面ready方法
  */
 $(document).ready(function() {
-
-    console.log("你不乖哦，彼此之间留点神秘感不好吗？");
-
     backToTop();
-    search();
+    // search();
 });
 
 /**

@@ -88,6 +88,9 @@ layout: null
     font-size: 12px;
     color: #676A6C;
 }
+.footnote .foot-text a,.footnote .foot-text a:hover {
+    color: #676A6C;
+}
 /* footer */
 .footnote{
     min-height: 50px;
