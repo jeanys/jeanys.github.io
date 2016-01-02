@@ -34,19 +34,19 @@ Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过�
 2. 有序列表 ol
 3. 有序列表 ol
 
-~~~javascript
+- [ ] 待办可选框 checkbox
+- [ ] 待办可选框 checkbox
+- [x] 待办可选框 checkbox
+- [x] 待办可选框 checkbox
+- [x] 待办可选框 checkbox
+
+```javascript
 function markdown() {
     //代码区块
 }
-~~~
+```
 
-- [ ] 支持以 PDF 格式导出文稿
-- [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
-- [x] 新增 Todo 列表功能
-- [x] 修复 LaTex 公式渲染问题
-- [x] 新增 LaTex 公式编号功能
-
-```flow
+~~~flow
 st=>start: Start
 op=>operation: Your Operation
 cond=>condition: Yes or No?
@@ -55,9 +55,10 @@ e=>end
 st->op->cond
 cond(yes)->e
 cond(no)->op
-```
+~~~
 
-| 项目       | 价格    |  数量   |
-| --------   | -----:  | :----:  |
-| 计算机     | \$1600  |   5     |
-
+| 向左对齐  | 向右对齐 | 居中 |
+| :-------- | --------:| :--: |
+| 计算机    |  6000 ￥ |  12  |
+| 手机      |  3000 ￥ |  33  |
+| 移动电源  |   200 ￥ | 66.5 |
