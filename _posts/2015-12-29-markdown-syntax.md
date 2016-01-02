@@ -46,19 +46,8 @@ function markdown() {
 }
 ```
 
-~~~flow
-st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-~~~
-
 | 向左对齐  | 向右对齐 | 居中 |
 | :-------- | --------:| :--: |
-| 计算机    |  6000 ￥ |  12  |
-| 手机      |  3000 ￥ |  33  |
+| 计算机    |  6000 ￥ | 0.5  |
+| 手机      |  3000 ￥ | 1.62 |
 | 移动电源  |   200 ￥ | 66.5 |
