@@ -20,6 +20,7 @@ Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过�
 **强调加粗**
 *强调倾斜*
 `行内代码`
+~~删除线~~
 
 --------------------------------------
 
@@ -33,12 +34,6 @@ Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过�
 1. 有序列表 ol
 2. 有序列表 ol
 3. 有序列表 ol
-
-- [ ] 待办可选框 checkbox
-- [ ] 待办可选框 checkbox
-- [x] 待办可选框 checkbox
-- [x] 待办可选框 checkbox
-- [x] 待办可选框 checkbox
 
 ```javascript
 function markdown() {
