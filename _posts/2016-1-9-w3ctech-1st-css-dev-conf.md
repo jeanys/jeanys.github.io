@@ -9,7 +9,7 @@ categories: HTML&CSS
 
 BortBos [PPT][PPT] [视频地址][video]
 
-### 1. 目前CSS规范的状态
+### 1. 目前规范的状态
 
 在CSS诞生时，考虑到需要向前兼容，CSS标准化使用 level 而不是 version[^level]。历史上，CSS Level 1 经历了 1994-1996 年，CSS Level 2 经历了 1997-1998 年。从1999年至今，CSS规范有很多部分需要更新，这个工作将是非常庞大的。于是W3C将 CSS Level 3 切分成了许多的 Module，这样已完成的部分就可以更早地推出规范。在之前未出现过的模块，level 从1开始计，例如 `Transforms`、`Animations`，出现过的模块，将延续从前的 level 继续计数，例如 `Selectors`、`Fonts`。如下表所示[^table]。
 
