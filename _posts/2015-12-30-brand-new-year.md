@@ -2,7 +2,7 @@
 layout: post
 title: 2015年终总结
 tags: 总结 规划
-categories: diary
+categories: 日记随笔
 ---
 
 两天后，就是新的一年。今年里，了解并熟悉了一些技术，在此做个总结。
