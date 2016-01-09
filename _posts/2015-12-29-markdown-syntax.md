@@ -23,7 +23,7 @@ Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过�
 ~~删除线~~
 注脚[^footnote]
 
-![Jeanys's Blog]({{"/upload/placeholder.png" | prepend: site.imgrepo }} "图片插入")
+![Jeanys's Blog][img]
 
 ---
 
@@ -66,4 +66,5 @@ function markdown() {
 [4]: http://wowubuntu.com/markdown/index.html "By @riku"
 [5]: http://www.markdown.cn
 
+[img]: {{"/upload/placeholder.png" | prepend: site.imgrepo }} "图片插入"
 [^footnote]: 用来阐释注脚
