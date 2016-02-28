@@ -110,7 +110,7 @@ this.modified.save();
 
 doT.js是一个强调快速简洁的JavaScript模版引擎，官方文档很简单，事实上用过之后发现它也确实很简单且易上手。doT.js有六种语法，下面来一一说说。（it为默认的接收对象表示）
 
-+ 插值         `{{=it.name}}`
++ 插值         `\{{=it.name}}`
 + 循环
     + 开始标记 `{{ for(var prop in it) { }}`
     + 结束标记 `{{ } }}`
