@@ -103,5 +103,3 @@ this.modified.save();
 ```
 
 到这里，便签就完成了。其实View层我写的很烂。正确的做法是为单个便签创建一个View，为便签列表创建一个View，Model对应小View，Collection对应大View，单个便签的事件与集合的事件分别绑定，这样逻辑和代码都清晰的多，可参考官方例子Todo。
-
-接下文：[初学Backbone(2)](http://jeanys.me/2016-02-28/backbone-and-requirejs-2/)
