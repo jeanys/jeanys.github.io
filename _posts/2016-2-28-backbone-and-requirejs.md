@@ -71,16 +71,16 @@ _.template($('#item-template').html()),
 ```javascript
 var notelist = new NoteList;
 var NoteView = Backbone.View.extend({
-    el: '.note-list',                                 //获取ul元素
+    el: '.note-list',                                               //获取ul元素
     template: _.template($('#item-template').html()),
     initialize: function() {
-        this.listenTo(notelist,'add',this.render);    //监听集合实例的自定义事件
+        this.listenTo(notelist,'add',this.render);                  //监听集合实例的自定义事件
         this.listenTo(notelist,'change',this.render);
         this.listenTo(notelist,'destroy',this.render);
-        notelist.fetch(); //拉取
+        notelist.fetch();                                           //拉取
     },
     render: function(model) {
-        this.$el.html(this.template({item: notelist.toJSON()})); //渲染模版并插入ul
+        this.$el.html(this.template({item: notelist.toJSON()}));    //渲染模版并插入ul
     }
 });
 ```
@@ -94,10 +94,8 @@ notelist.create({'content':this.notetext.val(),'time':dateFormat(new Date())},{
         model.set('id',response);
     }
 });
-
 //删除
 notelist.at(index).destroy();
-
 //修改
 this.modified.set('content',this.notetext.val());
 this.modified.set('time',dateFormat(new Date()));
@@ -110,29 +108,29 @@ this.modified.save();
 
 ### doT.js
 
-doT.js是一个强调快速简洁的JavaScript模版引擎，官方文档很简单，事实上用过之后发现它也确实很简单且易上手。doT有六种语法，下面来一一说说。（it为默认的接收对象表示）
+doT.js是一个强调快速简洁的JavaScript模版引擎，官方文档很简单，事实上用过之后发现它也确实很简单且易上手。doT.js有六种语法，下面来一一说说。（it为默认的接收对象表示）
 
 + 插值      `{{=it.name}}`
 + 循环
-++ 开始标记 `{{ for(var prop in it) { }}`
-++ 结束标记 `{{ } }}`
-++ 插入键名 `{{=prop}}`
-++ 插入键值 `{{=it[prop]}}`
+    + 开始标记 `{{ for(var prop in it) { }}`
+    + 结束标记 `{{ } }}`
+    + 插入键名 `{{=prop}}`
+    + 插入键值 `{{=it[prop]}}`
 + 条件
-++ 开始标记 `{{? 条件表达式}}`
-++ elseif   `{{?? 条件表达式}}`
-++ else     `{{??}}`
-++ 结束语句 `{{?}}`
+    + 开始标记 `{{? 条件表达式}}`
+    + elseif   `{{?? 条件表达式}}`
+    + else     `{{??}}`
+    + 结束语句 `{{?}}`
 + 数组
-++ 开始标记 `{{~it.array :value:index}}`
-++ 结束标记 `{{~}}`
-++ 插入键值 `{{=value}}`
-++ 插入索引 `{{=index}}`
+    + 开始标记 `{{~it.array :value:index}}`
+    + 结束标记 `{{~}}`
+    + 插入键值 `{{=value}}`
+    + 插入索引 `{{=index}}`
 + 编码      `{{!it.html}}`
 + 定义
-++ 开始标记 `{{##def.snippet:`
-++ 片段结束 `#}}`
-++ 结束标记 `{{#def.snippet}}`
+    + 开始标记 `{{##def.snippet:`
+    + 片段结束 `#}}`
+    + 结束标记 `{{#def.snippet}}`
 
 利用之前的便签Demo将模版引擎替换实践。先将官方下载好的doT.js引入到Backbone之后，然后修改HTML部分：
 
@@ -214,23 +212,31 @@ define([
 + [underscore.js API中文镜像][4]
 + [Backbone.js入门教程第二版][5]
 + [Backbone-mobile 移动WebAPP项目骨架][6]
+
 + [doT.js API][7]
 + [doT.js API中文镜像][8]
 + [doT.js模板引擎的使用][9]
 + [doT.js爱好者][10]
-+ [requirejs模块化编程][11]
-+ [巧用 RequireJS Optimizer 给传统的前端项目打包][12]
+
++ [RequireJS API][11]
++ [RequireJS API中文镜像][12]
++ [require.js的用法][13]
++ [requirejs模块化编程][14]
++ [巧用 RequireJS Optimizer 给传统的前端项目打包][15]
 
 [1]: http://backbonejs.org/
 [2]: http://underscorejs.org/
 [3]: http://www.css88.com/doc/backbone/
 [4]: http://www.css88.com/doc/underscore/
-[5]: https://github.com/the5fire/backbonejs-learning-note
-[6]: https://github.com/linksgo2011/backbone-mobile
+[5]: https://github.com/the5fire/backbonejs-learning-note "By the5fire"
+[6]: https://github.com/linksgo2011/backbone-mobile "By 少个分号"
 
 [7]: http://olado.github.io/doT/
 [8]: http://jinlong.github.io/doT/
-[9]: http://www.fantxi.com/blog/archives/dot-template/
+[9]: http://www.fantxi.com/blog/archives/dot-template/ "By Kairyou"
 [10]: http://dotjs.cn/
-[11]: https://segmentfault.com/a/1190000003409854
-[12]: http://jiongks.name/blog/build-any-web-project-with-requirejs-optimizer
+[11]: http://www.requirejs.org/
+[12]: http://www.requirejs.cn/
+[13]: http://www.ruanyifeng.com/blog/2012/11/require_js.html "By 阮一峰"
+[14]: https://segmentfault.com/a/1190000003409854 "By 智远try"
+[15]: http://jiongks.name/blog/build-any-web-project-with-requirejs-optimizer "By 勾三股四"
