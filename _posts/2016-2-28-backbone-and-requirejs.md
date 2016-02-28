@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 初学Backbone+RequireJS
-tags: 模块化 MVC Backbone RequireJS RESTful
+tags: 模块化 MVC Backbone RequireJS
 categories: JavaScript
 ---
 
@@ -36,3 +36,70 @@ var NoteItem = Backbone.Model.extend({
     }
 });
 ```
+
+创建便签集合的Collection，设置与服务器通信的url。
+
+```javascript
+var NoteList = Backbone.Collection.extend({
+    model: NoteItem,
+    url: '/index.php/note/'
+});
+```
+
+所有便签的View首先要放在模板里，这样才能对它进行循环和渲染。（Backbone用的underscore渲染模版，语法真是丑哭惹，等会就换doT.js）
+
+```html
+<script type="text/template" id="item-template">
+<% _.each(item,function(data) { %>
+    <li>
+        <pre class="cont"><%- data.content %></pre>
+        <span class="info"><%- data.time %></span>
+        <a href="javascript:;" class="remove iconfont" title="删除">&#xe6b4;</a>
+    </li>
+<% }); %>
+</script>
+```
+
+获取模版内容，DOM操作当然用默认依赖的jQuery啦。
+
+```javascript
+_.template($('#item-template').html()),
+```
+
+创建Collection的实例和便签列表的视图。最重要的一步：对Collection的事件监听并渲染，这样集合发生的添加、修改、删除就能反馈给视图。然后就可以对Collection拉取了。拉取成功后，Backbone自动对Collection进行`add`操作，监听方法就会执行`this.render`，便签列表就可以显示出来了。
+
+```javascript
+var notelist = new NoteList;
+var NoteView = Backbone.View.extend({
+    el: '.note-list',                                               //获取ul元素
+    template: _.template($('#item-template').html()),
+    initialize: function() {
+        this.listenTo(notelist,'add',this.render);                  //监听集合实例的自定义事件
+        this.listenTo(notelist,'change',this.render);
+        this.listenTo(notelist,'destroy',this.render);
+        notelist.fetch();                                           //拉取
+    },
+    render: function(model) {
+        this.$el.html(this.template({item: notelist.toJSON()}));    //渲染模版并插入ul
+    }
+});
+```
+
+这里有必要说下render这个操作，首次看到的时候，我实在对这个部分难以理解，怎么看怎么都绕来绕去的。仔细拆分之后就好懂多了，`this.template`就是获取到的模版内容，对它传入的对象模版那边可以接收到。当然了，对象的键名item要与模版中一致。`notelist.toJSON()`是Collection中的数据格式化为JSON，模版中的data对应的就是这个JSON数据，然后渲染的时候就可以访问到每个便签的具体属性了。接下来的增加、修改、删除都差不多，就不全部贴出了，只记录一下具体的重要操作。
+
+```javascript
+//添加
+notelist.create({'content':this.notetext.val(),'time':dateFormat(new Date())},{
+    success: function(model,response) {
+        model.set('id',response);
+    }
+});
+//删除
+notelist.at(index).destroy();
+//修改
+this.modified.set('content',this.notetext.val());
+this.modified.set('time',dateFormat(new Date()));
+this.modified.save();
+```
+
+到这里，便签就完成了。其实View层我写的很烂。正确的做法是为单个便签创建一个View，为便签列表创建一个View，Model对应小View，Collection对应大View，单个便签的事件与集合的事件分别绑定，这样逻辑和代码都清晰的多，可参考官方例子Todo。
