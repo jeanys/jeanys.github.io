@@ -48,7 +48,7 @@ var NoteList = Backbone.Collection.extend({
 
 所有便签的View首先要放在模板里，这样才能对它进行循环和渲染。（Backbone用的underscore渲染模版，语法真是丑哭惹，等会就换doT.js）
 
-```javascript
+```html
 <script type="text/template" id="item-template">
 <% _.each(item,function(data) { %>
     <li>
