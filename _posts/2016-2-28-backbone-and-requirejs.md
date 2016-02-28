@@ -110,39 +110,39 @@ this.modified.save();
 
 doT.js是一个强调快速简洁的JavaScript模版引擎，官方文档很简单，事实上用过之后发现它也确实很简单且易上手。doT.js有六种语法，下面来一一说说。（it为默认的接收对象表示）
 
-+ 插值         `\{\{=it.name\}\}`
++ 插值         `{{=it.name}}`
 + 循环
-    + 开始标记 `\{\{ for(var prop in it) { \}\}`
-    + 结束标记 `\{\{ } \}\}`
-    + 插入键名 `\{\{=prop\}\}`
-    + 插入键值 `\{\{=it[prop]\}\}`
+    + 开始标记 `{{ for(var prop in it) { }}`
+    + 结束标记 `{{ } }}`
+    + 插入键名 `{{=prop}}`
+    + 插入键值 `{{=it[prop]}}`
 + 条件
-    + 开始标记 `\{\{? 条件表达式\}\}`
-    + elseif   `\{\{?? 条件表达式\}\}`
-    + else     `\{\{??\}\}`
-    + 结束语句 `\{\{?\}\}`
+    + 开始标记 `{{? 条件表达式}}`
+    + elseif   `{{?? 条件表达式}}`
+    + else     `{{??}}`
+    + 结束语句 `{{?}}`
 + 数组
-    + 开始标记 `\{\{~it.array :value:index\}\}`
-    + 结束标记 `\{\{~\}\}`
-    + 插入键值 `\{\{=value\}\}`
-    + 插入索引 `\{\{=index\}\}`
-+ 编码         `\{\{!it.html\}\}`
+    + 开始标记 `{{~it.array :value:index}}`
+    + 结束标记 `{{~}}`
+    + 插入键值 `{{=value}}`
+    + 插入索引 `{{=index}}`
++ 编码         `{{!it.html}}`
 + 定义
-    + 开始标记 `\{\{##def.snippet:`
-    + 片段结束 `#\}\}`
-    + 结束标记 `\{\{#def.snippet\}\}`
+    + 开始标记 `{{##def.snippet:`
+    + 片段结束 `#}}`
+    + 结束标记 `{{#def.snippet}}`
 
 利用之前的便签Demo将模版引擎替换实践。先将官方下载好的doT.js引入到Backbone之后，然后修改HTML部分：
 
 ```html
 <script type="text/x-dot-template" id="item-template">
-\{\{~it.item :value:index\}\}
+{{~it.item :value:index}}
     <li>
-        <pre class="cont">\{\{=value.content\}\}</pre>
-        <span class="info">\{\{=value.time\}\}</span>
+        <pre class="cont">{{=value.content}}</pre>
+        <span class="info">{{=value.time}}</span>
         <a href="javascript:;" class="remove iconfont" title="删除">&#xe6b4;</a>
     </li>
-\{\{~\}\}
+{{~}}
 </script>
 ```
 
